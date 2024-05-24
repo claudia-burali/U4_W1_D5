@@ -7,6 +7,9 @@ public class Immagine extends ElementoMultimediale implements RegolaLuminosita {
 
     public Immagine(String titolo, int luminosita) {
         super(titolo);
+        if (luminosita <= 0) {
+            throw new IllegalArgumentException("La luminosità deve essere un valore positivo");
+        }
         this.luminosita = luminosita;
     }
 
@@ -15,17 +18,24 @@ public class Immagine extends ElementoMultimediale implements RegolaLuminosita {
     }
 
     public void setLuminosita(int luminosita) {
+        if (luminosita <= 0) {
+            throw new IllegalArgumentException("La luminosità deve essere un valore positivo");
+        }
         this.luminosita = luminosita;
     }
 
     public void show() {
-        System.out.println("Img: " + getTitolo());
+        StringBuilder imgLum = new StringBuilder();
+        for (int i = 0; i < luminosita; i++) {
+            imgLum.append("*");
+        }
+        System.out.println(getTitolo() + imgLum );
     }
 
     @Override
     public void aumentaLuminosita() {
         luminosita++;
-        System.out.println("Luminosità aumentata a: " + luminosita);
+        System.out.println("Luminosità: " + luminosita);
     }
 
     @Override
@@ -33,7 +43,7 @@ public class Immagine extends ElementoMultimediale implements RegolaLuminosita {
         if (luminosita > 0) {
             luminosita--;
         }
-        System.out.println("Luminosità diminuita a: " + luminosita);
+        System.out.println("Luminosità: " + luminosita);
     }
 }
 

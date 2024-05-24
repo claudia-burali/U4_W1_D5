@@ -6,7 +6,7 @@ public abstract class ElementoRiproducibile extends ElementoMultimediale {
     public ElementoRiproducibile(String titolo, int durata) {
         super(titolo);
         if (durata <= 0) {
-            throw new IllegalArgumentException("La durata deve essere un valore positivo.");
+            throw new IllegalArgumentException("La durata deve essere un valore positivo");
         }
         this.durata = durata;
     }
@@ -17,7 +17,7 @@ public abstract class ElementoRiproducibile extends ElementoMultimediale {
 
     public void setDurata(int durata) {
         if (durata <= 0) {
-            throw new IllegalArgumentException("La durata deve essere un valore positivo.");
+            throw new IllegalArgumentException("La durata deve essere un valore positivo");
         }
         this.durata = durata;
     }
