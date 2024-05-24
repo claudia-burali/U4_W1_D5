@@ -1,6 +1,6 @@
 package entities;
 
-abstract class ElementoMultimediale {
+public abstract class ElementoMultimediale {
     private String titolo;
 
     public ElementoMultimediale(String titolo) {
@@ -15,3 +15,4 @@ abstract class ElementoMultimediale {
         this.titolo = titolo;
     }
 }
+
